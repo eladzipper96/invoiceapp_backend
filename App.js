@@ -10,7 +10,7 @@ var userslist = []
 app.use(cors())
 app.use(express.json())
 
-const dbURI = 'mongodb+srv://invoiceuser:vmr2ds@cluster0.o7xdh.mongodb.net/invoiceapp?retryWrites=true&w=majority'
+const dbURI = process.env.MONGODBURI
 mongoose.connect(dbURI)
 .then((res) => {
     app.listen(4000)
